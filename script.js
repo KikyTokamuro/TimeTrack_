@@ -1,17 +1,17 @@
 const task  = document.getElementById("task"),
       timer = document.getElementById("timer"),
       hist  = document.getElementById("history"),
-	  start = document.getElementById("start"),
-	  stop  = document.getElementById("stop"),
-	  reset = document.getElementById("reset"),
-	  save  = document.getElementById("save"),
-	  clear = document.getElementById("clear"),
-	  exp   = document.getElementById("export");
+      start = document.getElementById("start"),
+      stop  = document.getElementById("stop"),
+      reset = document.getElementById("reset"),
+      save  = document.getElementById("save"),
+      clear = document.getElementById("clear"),
+      exp   = document.getElementById("export");
 
 let sec  = 0,
-	min  = 0,
-	hour = 0,
-	timerId;
+    min  = 0,
+    hour = 0,
+    timerId;
 
 const timerProcess = () => {
 	sec++;
@@ -19,7 +19,7 @@ const timerProcess = () => {
 	if (sec >= 60) {
         sec = 0;
         min++;
-        
+
         if (min >= 60) {
             min = 0;
             hour++;
@@ -28,7 +28,7 @@ const timerProcess = () => {
 
     let h = (hour ? (hour > 9 ? hour : "0" + hour) : "00"),
     	m = (min ? (min > 9 ? min : "0" + min) : "00"),
-    	s = (sec > 9 ? sec : "0" + sec); 
+    	s = (sec > 9 ? sec : "0" + sec);
 
     timer.textContent = `${h}:${m}:${s}`;
 
